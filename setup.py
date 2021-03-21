@@ -12,11 +12,11 @@ with open('README.md') as f:
 
 setup(
     name='benten-meta',
-    version='0.0.1',
+    version='0.0.1.rev1',
     description='benten metadata tool',
     long_description=readme,
     long_description_content_type='text/markdown',
-    url='https://github.com/benten-tool/benten-meta',
+    url='https://github.com/benten-tools/benten-meta',
     author='Takahiro Matsumoto',
     author_email='matumot@spring8.or.jp',
     license='Apache License 2.0',
