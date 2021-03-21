@@ -1,0 +1,132 @@
+data_info:
+  identifier:
+    pid: facility.xxxxx
+    proposal_number: xxxxx
+    register_name: xxxxx
+  date:
+    create_time: '2021-03-20 12:00:00'
+    update_time: '2021-03-20 13:00:00'
+  access_rights: open
+  contact_name:
+    affiliation:
+      organization: xxxxx
+    name: xxxxx
+    role: xxxxx
+  data_depositor:
+    affiliation:
+      organization: xxxxx
+    name: xxxxx
+  facility: xxxxx
+  class_name: xxxxx
+  disk_name: xxxxx
+  title_ja: xxxxx
+  title: xxxxx
+facility:
+  ring:
+    end_current: 99.5
+    end_current_unit: mA
+    energy: 8.0
+    energy_unit: GeV
+    filling_pattern: 203 bunches
+    filling_pattern_mode: A
+    start_current: 99.5
+    start_current_unit: mA
+sample:
+- chemical_formula: Cu-foil
+  lot_number: xxxxx
+  model_number: xxxxx
+  name: Copper
+  supplier: xxxxx
+measurement:
+  date:
+    end_time: '2021-03-20 10:00:00'
+    start_time: '2021-03-20 09:00:00'
+  method:
+    absorption_edge: Cu K-edge
+    category: spectroscopy
+    detection: Transmission( 2)
+    sub_category: XAFS
+  scan_mode: angle axis (1)
+instrument:
+  monochrometer:
+    distance: 3.13551
+    distance_unit: A
+    net_plane: Si(111)
+    section:
+    - start_energy: 13.3
+      start_energy_unit: deg
+      step_energy: -0.00052
+      step_energy_unit: deg
+      end_energy: 10.8
+      end_energy_unit: deg
+      dwell_time: 50.0
+      dwell_time_unit: ms
+  slit:
+  - name: 4Dslit
+    vertical_size: 1.0
+    vertical_size_unit: mm
+    horizontal_size: 5.0
+    horizontal_size_unit: mm
+  xafs:
+    I0:
+      element:
+      - type: Ion Chamber
+        gas: N2 100%
+        HV: 1000.0
+        HV_unit: V
+      element_number: 1
+    I1:
+      element:
+      - type: Ion Chamber
+        gas: N2 70% + Ar 30%
+        HV: 1000.0
+        HV_unit: V
+      element_number: 1
+local:
+  measurement_time: 240.0
+  measurement_time_unit: sec
+  xafs_filename_list:
+  - xxxxx.dat
+  xafs_processed_data_format:
+  - extension: ex3
+    format: Rex2000
+    columns:
+    - name: photon energy
+      unit: eV
+      formula: 12398/(2*D*math.sin(columns[1]))
+      input:
+        columns: xafs_raw_data_format[0].columns
+        D: xafs_raw_data_format[0].parameter.D
+    - name: absorption coefficient mu*t
+      formula: math.log(columns[3]/columns[4])
+      input:
+        columns: xafs_raw_data_format[0].columns
+  - extension: txt
+    format: Athena
+    columns:
+    - name: photon energy
+      unit: eV
+      formula: 12398/(2*D*math.sin(columns[1]))
+      input:
+        columns: xafs_raw_data_format[0].columns
+        D: xafs_raw_data_format[0].parameter.D
+    - name: absorption coefficient mu*t
+      formula: math.log(columns[3]/columns[4])
+      input:
+        columns: xafs_raw_data_format[0].columns
+  xafs_raw_data_format:
+  - extension: dat
+    format: PF9809
+    parameter:
+      D: monochrometer distance
+    columns:
+    - name: monochrometer angle (setting value of PC)
+      unit: deg
+    - name: monochrometer angle (encoder value)
+      unit: deg
+    - name: dwell time
+      unit: sec
+    - name: intensity I0
+      unit: count
+    - name: intensity I1
+      unit: count

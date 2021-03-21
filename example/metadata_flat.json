@@ -1,0 +1,156 @@
+{
+    "@data_info@identifier@pid":"facility.xxxxx",
+    "@data_info@identifier@proposal_number":"xxxxx",
+    "@data_info@identifier@register_name":"xxxxx",
+    "@data_info@date@create_time":"2021-03-20 12:00:00",
+    "@data_info@date@update_time":"2021-03-20 13:00:00",
+    "@data_info@access_rights":"open",
+    "@data_info@contact_name@affiliation@organization":"xxxxx",
+    "@data_info@contact_name@name":"xxxxx",
+    "@data_info@contact_name@role":"xxxxx",
+    "@data_info@data_depositor@affiliation@organization":"xxxxx",
+    "@data_info@data_depositor@name":"xxxxx",
+    "@data_info@facility":"xxxxx",
+    "@data_info@class_name":"xxxxx",
+    "@data_info@disk_name":"xxxxx",
+    "@data_info@title_ja":"xxxxx",
+    "@data_info@title":"xxxxx",
+    "@facility@ring@end_current":99.5,
+    "@facility@ring@end_current_unit":"mA",
+    "@facility@ring@energy":8.0,
+    "@facility@ring@energy_unit":"GeV",
+    "@facility@ring@filling_pattern":"203 bunches",
+    "@facility@ring@filling_pattern_mode":"A",
+    "@facility@ring@start_current":99.5,
+    "@facility@ring@start_current_unit":"mA",
+    "@sample":[
+        {
+            "chemical_formula":"Cu-foil",
+            "lot_number":"xxxxx",
+            "model_number":"xxxxx",
+            "name":"Copper",
+            "supplier":"xxxxx"
+        }
+    ],
+    "@measurement@date@end_time":"2021-03-20 10:00:00",
+    "@measurement@date@start_time":"2021-03-20 09:00:00",
+    "@measurement@method@absorption_edge":"Cu K-edge",
+    "@measurement@method@category":"spectroscopy",
+    "@measurement@method@detection":"Transmission( 2)",
+    "@measurement@method@sub_category":"XAFS",
+    "@measurement@scan_mode":"angle axis (1)",
+    "@instrument@monochrometer@distance":3.13551,
+    "@instrument@monochrometer@distance_unit":"A",
+    "@instrument@monochrometer@net_plane":"Si(111)",
+    "@instrument@monochrometer@section":[
+        {
+            "start_energy":13.3,
+            "start_energy_unit":"deg",
+            "step_energy":-0.00052,
+            "step_energy_unit":"deg",
+            "end_energy":10.8,
+            "end_energy_unit":"deg",
+            "dwell_time":50.0,
+            "dwell_time_unit":"ms"
+        }
+    ],
+    "@instrument@slit":[
+        {
+            "name":"4Dslit",
+            "vertical_size":1.0,
+            "vertical_size_unit":"mm",
+            "horizontal_size":5.0,
+            "horizontal_size_unit":"mm"
+        }
+    ],
+    "@instrument@xafs@I0@element":[
+        {
+            "type":"Ion Chamber",
+            "gas":"N2 100%",
+            "HV":1000.0,
+            "HV_unit":"V"
+        }
+    ],
+    "@instrument@xafs@I0@element_number":1,
+    "@instrument@xafs@I1@element":[
+        {
+            "type":"Ion Chamber",
+            "gas":"N2 70% + Ar 30%",
+            "HV":1000.0,
+            "HV_unit":"V"
+        }
+    ],
+    "@instrument@xafs@I1@element_number":1,
+    "@local@measurement_time":240.0,
+    "@local@measurement_time_unit":"sec",
+    "@local@xafs_filename_list":[
+        "xxxxx.dat"
+    ],
+    "@local@xafs_processed_data_format":[
+        {
+            "extension":"ex3",
+            "format":"Rex2000",
+            "columns":[
+                {
+                    "name":"photon energy",
+                    "unit":"eV",
+                    "formula":"12398/(2*D*math.sin(columns[1]))",
+                    "input@columns":"xafs_raw_data_format[0].columns",
+                    "input@D":"xafs_raw_data_format[0].parameter.D"
+                },
+                {
+                    "name":"absorption coefficient mu*t",
+                    "formula":"math.log(columns[3]/columns[4])",
+                    "input@columns":"xafs_raw_data_format[0].columns"
+                }
+            ]
+        },
+        {
+            "extension":"txt",
+            "format":"Athena",
+            "columns":[
+                {
+                    "name":"photon energy",
+                    "unit":"eV",
+                    "formula":"12398/(2*D*math.sin(columns[1]))",
+                    "input@columns":"xafs_raw_data_format[0].columns",
+                    "input@D":"xafs_raw_data_format[0].parameter.D"
+                },
+                {
+                    "name":"absorption coefficient mu*t",
+                    "formula":"math.log(columns[3]/columns[4])",
+                    "input@columns":"xafs_raw_data_format[0].columns"
+                }
+            ]
+        }
+    ],
+    "@local@xafs_raw_data_format":[
+        {
+            "extension":"dat",
+            "format":"PF9809",
+            "parameter@D":"monochrometer distance",
+            "columns":[
+                {
+                    "name":"monochrometer angle (setting value of PC)",
+                    "unit":"deg"
+                },
+                {
+                    "name":"monochrometer angle (encoder value)",
+                    "unit":"deg"
+                },
+                {
+                    "name":"dwell time",
+                    "unit":"sec"
+                },
+                {
+                    "name":"intensity I0",
+                    "unit":"count"
+                },
+                {
+                    "name":"intensity I1",
+                    "unit":"count"
+                }
+            ]
+        }
+    ]
+}
