@@ -15,7 +15,7 @@ __version__      = '0.0.1'
 __license__      = 'Apache License 2.0'
 __author__       = 'Takahiro Matsumoto'
 __author_email__ = 'matumot@spring8.or.jp'
-__url__          = 'https://github.com/kanryu/sbpl'
+__url__          = 'https://github.com/benten-tools/benten-meta'
 
 logger = getLogger(__name__)
 handler = StreamHandler()
