@@ -27,7 +27,7 @@ data_info:
     proposal_number: xxxxx
 ```
 
-  This tool can convert metadata from json to yaml, or yaml to json.
+  This tool can convert metadata from json to yaml, or from yaml to json.
 
 ## Install
 
