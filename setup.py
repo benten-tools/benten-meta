@@ -12,7 +12,7 @@ with open('README.md') as f:
 
 setup(
     name='benten-meta',
-    version='0.0.1.post2',
+    version='0.0.1.post3',
     description='benten metadata tool',
     long_description=readme,
     long_description_content_type='text/markdown',
