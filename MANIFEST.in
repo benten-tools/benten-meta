@@ -1,2 +1,5 @@
+include README.md
+include LICENSE
 include scripts/benten-meta.bat
-
+include example/metadata_flat.json
+include example/metadata_hierarchy.yml
